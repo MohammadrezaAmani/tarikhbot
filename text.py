@@ -1,0 +1,2 @@
+hi = ''
+input('hi: ',hi)
