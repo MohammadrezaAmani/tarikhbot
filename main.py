@@ -2,7 +2,8 @@ from cgitb import text
 from telegram.ext import CallbackContext,Handler,Filters,Dispatcher,Updater,CommandHandler,MessageHandler,MessageFilter,BaseFilter,Filters
 from telegram import InlineQueryResultArticle, InputTextMessageContent, KeyboardButton, ReplyKeyboardMarkup,InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackQueryHandler
-
+import os
+PORT = int(os.environ.get('PORT', '8443'))
 import datetime
 
 update = Updater('5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk',use_context=True)
