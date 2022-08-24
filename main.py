@@ -193,7 +193,7 @@ def main():
     dispatcher.add_handler(startHandler)
     dispatcher.add_handler(MessageHandler(Filters.all,sendMessage))
     update.dispatcher.add_handler(CallbackQueryHandler(press_button_callback))
-    updater.start_webhook(
+    update.start_webhook(
             listen="0.0.0.0",
             port=int(PORT),
             url_path='5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk',
