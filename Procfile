@@ -1,1 +1,1 @@
-web: python tarikh.py
+web: python3 tarikh.py
