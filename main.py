@@ -188,5 +188,11 @@ startHandler = CommandHandler('start',start)
 dispatcher.add_handler(startHandler)
 dispatcher.add_handler(MessageHandler(Filters.all,sendMessage))
 update.dispatcher.add_handler(CallbackQueryHandler(press_button_callback))
-update.start_polling()
+updater.start_webhook(
+        listen="0.0.0.0",
+        port=int(PORT),
+        url_path=TOKEN,
+        webhook_url='https://tele2430.herokuapp.com/' + '5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk'
+    )
+
 update.idle()
