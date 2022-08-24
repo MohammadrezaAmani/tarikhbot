@@ -4,7 +4,11 @@ from telegram.ext import CallbackQueryHandler
 import os
 PORT = int(os.environ.get('PORT', '8443'))
 import datetime
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 
+logger = logging.getLogger(__name__)
 update = Updater('5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk',use_context=True)
 
 
@@ -183,16 +187,20 @@ def press_button_callback(update:Updater,context:CallbackContext):
     if data.startswith('answer'):
         context.bot.send_message(chat_id=id,text='داری به نمیدونم کی کی پاسخ میدی. لطفا متنت رو بفرست.')
         LASTSADMINS[str(id)]=data.split('_')[1]
-dispatcher = update.dispatcher
-startHandler = CommandHandler('start',start)
-dispatcher.add_handler(startHandler)
-dispatcher.add_handler(MessageHandler(Filters.all,sendMessage))
-update.dispatcher.add_handler(CallbackQueryHandler(press_button_callback))
-updater.start_webhook(
-        listen="0.0.0.0",
-        port=int(PORT),
-        url_path='5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk',
-        webhook_url='https://tele2430.herokuapp.com/' + '5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk'
-    )
+def main():
+    dispatcher = update.dispatcher
+    startHandler = CommandHandler('start',start)
+    dispatcher.add_handler(startHandler)
+    dispatcher.add_handler(MessageHandler(Filters.all,sendMessage))
+    update.dispatcher.add_handler(CallbackQueryHandler(press_button_callback))
+    updater.start_webhook(
+            listen="0.0.0.0",
+            port=int(PORT),
+            url_path='5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk',
+            webhook_url='https://tele2430.herokuapp.com/' + '5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk'
+        )
 
-update.idle()
+    update.idle()
+
+if __name__ == '__main__':
+    main()
