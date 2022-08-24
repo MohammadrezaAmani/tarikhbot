@@ -1,4 +1,3 @@
-from cgitb import text
 from telegram.ext import CallbackContext,Handler,Filters,Dispatcher,Updater,CommandHandler,MessageHandler,MessageFilter,BaseFilter,Filters
 from telegram import InlineQueryResultArticle, InputTextMessageContent, KeyboardButton, ReplyKeyboardMarkup,InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackQueryHandler
@@ -192,7 +191,7 @@ update.dispatcher.add_handler(CallbackQueryHandler(press_button_callback))
 updater.start_webhook(
         listen="0.0.0.0",
         port=int(PORT),
-        url_path=TOKEN,
+        url_path='5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk',
         webhook_url='https://tele2430.herokuapp.com/' + '5591645553:AAEbvWbYTgVjFexAAAcMLnsf_No1uSD_gkk'
     )
 
