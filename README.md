@@ -1,4 +1,4 @@
-# Task Manager Bot
+# Workino - Task Manager Bot
 
 A highly advanced, modular, multi-user Telegram Task Management Bot with financial management, task planning, Google Calendar & Gmail sync.
 
@@ -45,7 +45,7 @@ project/
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/task-manager-bot.git
+   git clone https://github.com/MohammadrezaAmani/workino.git
    cd task-manager-bot
    ```
 
